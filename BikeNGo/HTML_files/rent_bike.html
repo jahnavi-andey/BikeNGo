@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent Bike</title>
+    <link rel="stylesheet" href="give_rent.css">
+    <style>
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #333;
+            padding: 10px;
+        }
+        .navbar img.logo {
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div style="display: flex; align-items: center;">
+            <img src="Images/logo.jpeg" alt="Logo" class="logo">
+        </div>
+    </div>
+    <main id="bike-details">
+        <!-- Selected bike details will be dynamically inserted here -->
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        fetch('/api/bikes')
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then(bikes => {
+            const bikeList = document.getElementById('bike-details');
+            bikes.forEach(bike => {
+              const bikeItem = document.createElement('div');
+              bikeItem.className = 'bike-item';
+              bikeItem.innerHTML = `
+                <img src="${bike.bike_image}" alt="BIKE IMAGE">
+                <div class="bike-details">
+                  <p>${bike.bike_type}</p>
+                  <p>Company: ${bike.bike_company}</p>
+                  <p>Owner: ${bike.owner_name}</p>
+                  <p>Owner number: ${bike.owner_number}</p>
+                  <p>Price: ${bike.bike_price}</p>
+                </div>
+              `;
+              bikeList.appendChild(bikeItem);
+            });
+          })
+          .catch(error => {
+            console.error('Error fetching bikes:', error);
+            const bikeList = document.getElementById('bike-details');
+            bikeList.innerHTML = '<p>Error loading bikes. Please try again later.</p>';
+          });
+      });
+    </script>
+</body>
+</html>

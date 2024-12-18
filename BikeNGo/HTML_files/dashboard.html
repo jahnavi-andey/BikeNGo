@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motorbike Rental</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #333;
+            padding: 10px;
+        }
+        .navbar img.logo {
+            height: 50px;
+        }
+        .navbar .profile {
+            height: 70px;
+            cursor: pointer;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .block {
+            display: flex;
+            align-items: center;
+            width: 80%;
+            margin: 10px 0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .block img {
+            width: 150px;
+            height: 150px;
+            margin-right: 20px;
+        }
+        .block-content {
+            display: flex;
+            flex-direction: column;
+        }
+        .block-content p {
+            margin: 0 0 10px;
+        }
+        .block-content a {
+            text-decoration: none;
+        }
+        .block-content button {
+            width: fit-content;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .block-content button:hover {
+            background-color: #0056b3;
+        }
+        .block-content button .arrow {
+            margin-left: 10px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div style="display: flex; align-items: center;">
+            <img src="Images/logo.jpeg" alt="Logo" class="logo">
+        </div>
+        <img src="Images/profile_icon.jpeg" alt="Profile" class="profile" onclick="location.href='profile.html'">
+    </div>
+
+    <div class="container">
+        <div class="block">
+            <img src="Images/dashboard_give_rent.jpeg" alt="Motorbike 1">
+            <div class="block-content">
+                <p>Give your motorbike for rent and earn extra income. Our platform makes it easy and secure.</p>
+                <p>You can list your motorbike in just a few simple steps, and we ensure that your bike is rented out to verified users. Enjoy peace of mind with our insurance coverage and support services.</p>
+                <a href="/giveRent"><button>Give for Rent <span class="arrow">→</span></button></a>
+            </div>
+        </div>
+        <div class="block">
+            <img src="Images/dashboard_rent_bike.jpeg" alt="Motorbike 2">
+            <div class="block-content">
+                <p>Rent a motorbike for your next adventure. Choose from a wide variety of bikes available.</p>
+                <p>Whether you need a bike for a day or a week, we have flexible rental options to suit your needs. Explore new places and make unforgettable memories with our reliable motorbikes.</p>
+                <a href="/rentBike"><button>Rent a Bike <span class="arrow">→</span></button></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

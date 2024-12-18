@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="CSS_files/signInStyle.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">BikeNGo</div>
+        <div class="welcome-text">Welcome Back!</div>
+        <form action="/logIn" method="post">
+            <input name = "email" type="email" placeholder="Email" required>
+            <input type="password" name = "password" placeholder="Password" required>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        <div class="forgot-password"><a href="/forgotPasswordPage">Forgot Password?</a></div>
+        <div class="signup">Don't have an account? <a href="/signUp">Sign Up</a></div>
+    </div>
+</body>
+</html>
