@@ -1,0 +1,72 @@
+/* give_rent.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+.navbar .logo {
+    height: 50px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.bike-item {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: 600px;
+}
+
+.bike-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.bike-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.bike-details p {
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .bike-item {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .bike-item img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
